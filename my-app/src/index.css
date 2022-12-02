@@ -1,7 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, 'Twinkle Star',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -20,8 +19,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family:'Twinkle Star'
 }
 
 .landing-page-btns-div{
@@ -33,10 +31,12 @@ code {
 
 .login-btn{
   margin-right: 20px;
+  font-family:'Twinkle Star'
 }
 
 .logout-btn{
   margin-left: 20px;
+  font-family:'Twinkle Star'
 }
 
 
@@ -51,7 +51,6 @@ button {
   cursor: pointer;
   display: inline-flex;
   fill: #000;
-  font-family: Inter, sans-serif;
   font-size: 16px;
   font-weight: 600;
   height: 48px;
@@ -67,6 +66,7 @@ button {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  font-family:'Twinkle Star'
 }
 
 button:focus {
@@ -150,7 +150,6 @@ button:active {
   font-size: 16px;
 
   border: 0;
-
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
