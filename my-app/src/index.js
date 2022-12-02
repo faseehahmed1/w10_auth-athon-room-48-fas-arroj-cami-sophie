@@ -17,8 +17,10 @@ root.render(
       scope="read:current_user update:current_user_metadata"
     >
       <App />
-      <LoginButton className="login-btn" />
-      <LogoutButton className="logout-btn" />
+      <div className="landing-page-btns-div">
+        <LoginButton className="login-btn" />
+        <LogoutButton className="logout-btn" />
+      </div>
     </Auth0Provider>{" "}
   </React.StrictMode>
 );
