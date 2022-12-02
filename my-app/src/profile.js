@@ -45,7 +45,7 @@ const Profile = ({ setBirthDay, setBirthMonth }) => {
         {/* <img src={user.picture} alt={user.name} /> */}
         <h2>{user.name}</h2>
         {/* <p>{user.email}</p> */}
-        <h3>User Metadata</h3>
+        
         {userMetadata ? (
           <>
             <pre>{setBirthDay(userMetadata.birth_day)}</pre>
