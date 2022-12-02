@@ -6,11 +6,12 @@ import signGenerator from "./signGenerator";
 import Button from "./Button";
 
 import "./App.css";
+import { setImmediate } from "core-js";
 
 function App() {
   const { isAuthenticated } = useAuth0();
   const [sign, setSign] = useState("");
-  const [day, setDay] = useState("today");
+  const [day, setDay] = useState("");
   const [birthDay, setBirthDay] = useState("");
   const [birthMonth, setBirthMonth] = useState("");
   const [horoscope, setHoroscope] = useState({});
@@ -22,7 +23,6 @@ function App() {
   }, [birthDay, birthMonth]);
 
   function handleClick(e) {
-    console.log(`You have clicked me!`);
     async function getHoroscope() {
       const rawResponse = await fetch(
         `https://aztro.sameerkumar.website?sign=${sign}&day=${day}`,
@@ -50,9 +50,15 @@ function App() {
 
       setCardClass(horoscope.colour); //this will set the class of the card to the color that matches the suggestion in the horoscope - to be used for styling accordingly
     }
+
     getHoroscope();
     console.log(horoscope);
   }
+
+  // function handleDay(e) {
+  //   setDay("tomorrow");
+  //   handleClick();
+  // }
 
   return (
     <div className="App">
@@ -63,6 +69,13 @@ function App() {
           <Card className={cardClass}>
             <h1>{sign}</h1>
             <h2>{horoscope.day}</h2>
+            <Button
+              text="View tomorrow's horoscope"
+              handleClick={() => {
+                setDay("tomorrow");
+                handleClick();
+              }}
+            />
             <p>{horoscope.description}</p>
             <p>
               Your mood is: <span>{horoscope.mood}</span>
@@ -77,13 +90,16 @@ function App() {
               Your lucky time is: <span>{horoscope.luckyTime}</span>
             </p>
             <p>
-              Your most compatible sign is:
+              Your most compatible sign is:{" "}
               <span>{horoscope.compatibility}</span>
             </p>
           </Card>
           <Button
-            text="Click to see your horoscope!"
-            handleClick={handleClick}
+            text="Click to see today's horoscope!"
+            handleClick={() => {
+              setDay("today");
+              handleClick();
+            }}
             className="generate-horoscope"
           />
         </>
