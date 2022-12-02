@@ -58,7 +58,6 @@ function App() {
       {isAuthenticated && (
         <>
           <Card>
-            <p>This is your horoscope</p>
             <h1>{sign}</h1>
             <h2>{horoscope.day}</h2>
             <p>{horoscope.description}</p>
