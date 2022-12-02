@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
+import LoginButton from "../src/Login"; //❗ add this
+import LogoutButton from "../src/Logout"; //❗ add this
+import Profile from "../src/Profile"; //❗ add this
 import { Auth0Provider } from "@auth0/auth0-react"; //❗ add this
-import LoginButton from "../../../my-app/src/login"; //❗ add this
-import LogoutButton from "../../../my-app/src/logout"; //❗ add this
-import Profile from "../../../my-app/src/profile"; //❗ add this
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -18,8 +18,8 @@ root.render(
       scope="read:current_user update:current_user_metadata"
     >
       <App />
-      <LoginButton />
-      <LogoutButton />
+      <LoginButton className="login-btn" />
+      <LogoutButton className="logout-btn" />
       <Profile />
     </Auth0Provider>{" "}
   </React.StrictMode>
