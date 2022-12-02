@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Card from "../src/Card";
 import { useAuth0 } from "@auth0/auth0-react";
-import Profile from '../src/Profile'
+import Profile from "../src/Profile";
+import signGenerator from "./signGenerator";
 
 import "./App.css";
 
@@ -9,10 +10,11 @@ function App() {
   const { isAuthenticated } = useAuth0();
   const [sign, setSign] = useState("");
   const [day, setDay] = useState("today");
-  const [dob, setDob] = useState("");
+  const [birthDay, setBirthDay] = useState("");
+  const [birthMonth, setBirthMonth] = useState("");
   const [horoscope, setHoroscope] = useState({});
-  const [metadata, setMetadata] = useState({})
-  const { user } = useAuth0();
+
+  signGenerator(+birthDay, birthMonth);
 
   function handleClick(e) {
     async function getHoroscope() {
@@ -44,10 +46,12 @@ function App() {
   return (
     <div className="App">
       <p>Hello!</p>
-      <Profile setMetadata={setMetadata}/>
+      <Profile setBirthDay={setBirthDay} setBirthMonth={setBirthMonth} />
       {isAuthenticated && (
         <Card>
           <p>This is your horoscope</p>
+          <p>{birthDay}</p>
+          <p>{birthMonth}</p>
         </Card>
       )}
     </div>
