@@ -1,5 +1,5 @@
 import React from "react";
 
-function Card({ children }) {
-  return <div>{children}</div>;
+function Card({ children, style, className }) {
+  return <div style={style}>{children}</div>;
 }
