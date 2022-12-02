@@ -14,6 +14,7 @@ function App() {
   const [birthDay, setBirthDay] = useState("");
   const [birthMonth, setBirthMonth] = useState("");
   const [horoscope, setHoroscope] = useState({});
+  const [cardClass, setCardClass] = useState("");
 
   useEffect(() => {
     let horoscopeSign = signGenerator(+birthDay, birthMonth);
@@ -46,6 +47,8 @@ function App() {
         luckyNumber: content.lucky_number,
         luckyTime: content.lucky_time,
       });
+
+      setCardClass(horoscope.colour); //this will set the class of the card to the color that matches the suggestion in the horoscope - to be used for styling accordingly
     }
     getHoroscope();
     console.log(horoscope);
@@ -57,7 +60,7 @@ function App() {
       <Profile setBirthDay={setBirthDay} setBirthMonth={setBirthMonth} />
       {isAuthenticated && (
         <>
-          <Card>
+          <Card className={cardClass}>
             <h1>{sign}</h1>
             <h2>{horoscope.day}</h2>
             <p>{horoscope.description}</p>
