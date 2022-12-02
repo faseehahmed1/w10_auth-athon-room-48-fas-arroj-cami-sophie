@@ -1,7 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React, { useEffect, useState } from "react";
 
-const Profile = () => {
+const Profile = ({setMetaData}) => {
   const { user, isAuthenticated, isLoading, getAccessTokenSilently } =
     useAuth0();
   const [userMetadata, setUserMetadata] = useState(null);
@@ -47,7 +47,7 @@ const Profile = () => {
         {/* <p>{user.email}</p> */}
         <h3>User Metadata</h3>
         {userMetadata ? (
-          <pre>{JSON.stringify(userMetadata, null, 2)}</pre>
+          {/*<pre>{JSON.stringify(userMetadata, null, 2)}</pre>*/}
         ) : (
           "No user metadata defined"
         )}{" "}

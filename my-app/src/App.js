@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Card from "../src/Card";
 import { useAuth0 } from "@auth0/auth0-react";
+import Profile from '../src/Profile'
 
 import "./App.css";
 
@@ -10,6 +11,8 @@ function App() {
   const [day, setDay] = useState("today");
   const [dob, setDob] = useState("");
   const [horoscope, setHoroscope] = useState({});
+  const [metadata, setMetadata] = useState({})
+  const { user } = useAuth0();
 
   function handleClick(e) {
     async function getHoroscope() {
@@ -41,6 +44,7 @@ function App() {
   return (
     <div className="App">
       <p>Hello!</p>
+      <Profile setMetadata={setMetadata}/>
       {isAuthenticated && (
         <Card>
           <p>This is your horoscope</p>

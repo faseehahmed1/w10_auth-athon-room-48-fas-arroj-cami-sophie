@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App";
 import LoginButton from "../src/Login"; //❗ add this
 import LogoutButton from "../src/Logout"; //❗ add this
-import Profile from "../src/Profile"; //❗ add this
 import { Auth0Provider } from "@auth0/auth0-react"; //❗ add this
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -20,7 +19,6 @@ root.render(
       <App />
       <LoginButton className="login-btn" />
       <LogoutButton className="logout-btn" />
-      <Profile />
     </Auth0Provider>{" "}
   </React.StrictMode>
 );
