@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Card from './Card'
+import Card from "./Card";
 import { useAuth0 } from "@auth0/auth0-react";
 import Profile from "./profile";
 import signGenerator from "./signGenerator";
 import Button from "./Button";
 
 import "./App.css";
-import { setImmediate } from "core-js";
 
 function App() {
   const { isAuthenticated } = useAuth0();
