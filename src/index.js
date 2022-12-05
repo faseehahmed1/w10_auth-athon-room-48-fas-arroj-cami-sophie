@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import LoginButton from "../src/Login"; //❗ add this
-import LogoutButton from "../src/Logout"; //❗ add this
+import LoginButton from "../src/login"; //❗ add this
+import LogoutButton from "../src/logout"; //❗ add this
 import { Auth0Provider } from "@auth0/auth0-react"; //❗ add this
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

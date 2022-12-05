@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from './Card'
 import { useAuth0 } from "@auth0/auth0-react";
-import Profile from "./Profile";
+import Profile from "./profile";
 import signGenerator from "./signGenerator";
 import Button from "./Button";
 
