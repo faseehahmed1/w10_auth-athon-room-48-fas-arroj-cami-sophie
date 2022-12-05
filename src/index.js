@@ -10,10 +10,10 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Auth0Provider
-      domain="dev-em588mv6rm6jy6hn.us.auth0.com"
-      clientId="ujpnyMULbFNoqRJY06kn5JKZAz7t56CM"
+      domain="dev-w0zy4a86z1kfd1s5.eu.auth0.com"
+      clientId="x8tHlMB9QzsYEU5BEDufdekvizXxrZXO"
       redirectUri={window.location.origin}
-      audience="https://dev-em588mv6rm6jy6hn.us.auth0.com/api/v2/"
+      audience="https://dev-w0zy4a86z1kfd1s5.eu.auth0.com/api/v2/"
       scope="read:current_user update:current_user_metadata"
     >
       <App />

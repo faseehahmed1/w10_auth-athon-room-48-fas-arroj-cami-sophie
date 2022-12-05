@@ -8,7 +8,7 @@ const Profile = ({ setBirthDay, setBirthMonth }) => {
 
   useEffect(() => {
     const getUserMetadata = async () => {
-      const domain = "dev-em588mv6rm6jy6hn.us.auth0.com";
+      const domain = "dev-w0zy4a86z1kfd1s5.eu.auth0.com";
 
       try {
         const accessToken = await getAccessTokenSilently({
